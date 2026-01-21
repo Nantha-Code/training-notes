@@ -72,30 +72,39 @@
 // }, 1000);
 // }, 1000);
 
-function updateText(text, delay) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      document.querySelector('h1').innerText = text;
-      resolve();
-    }, delay);
-  });
-}
-updateText(9, 1000)
-  .then(() => updateText(8, 1000))
-  .then(() => updateText(7, 1000))
-  .then(() => updateText(6, 1000))
-  .then(() => updateText(5, 1000))
-  .then(() => updateText(4, 1000))
-  .then(() => updateText(3, 1000))
-  .then(() => updateText(2, 1000))
-  .then(() => updateText(1, 1000))
-  .then(() => updateText("Happy Pongal", 1000))
-  .catch((error) => console.error(error));
+// function updateText(text, delay) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       document.querySelector('h1').innerText = text;
+//       resolve();
+//     }, delay);
+//   });
+// }
+// updateText(9, 1000)
+//   .then(() => updateText(8, 1000))
+  // .then(() => updateText(7, 1000))
+  // .then(() => updateText(6, 1000))
+  // .then(() => updateText(5, 1000))
+  // .then(() => updateText(4, 1000))
+  // .then(() => updateText(3, 1000))
+  // .then(() => updateText(2, 1000))
+  // .then(() => updateText(1, 1000))
+  // .then(() => updateText("Happy Pongal", 1000))
+  // .catch((error) => console.error(error));
 
 
+const updateText = (t, d) =>
+  new Promise(r => setTimeout(() => {
+    document.querySelector('h1').innerText = t;
+    r();
+  }, d));
 
+[9,8,7,6,5,4,3,2,1,"Happy Pongal 🎉"]
+  .reduce((p, v) => p.then(() => updateText(v, 1000)), Promise.resolve());
 
 
 </script>
 </body>
 </html>
+
+

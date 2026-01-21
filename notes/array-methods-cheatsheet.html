@@ -1,0 +1,282 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Methods Cheat Sheet</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.4;
+      margin: 24px;
+      color: #111;
+    }
+    h1, h2 {
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 22px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    th {
+      background: #f2f2f2;
+    }
+    .mutating { background: #ffeaea; }
+    .non-mutating { background: #eaffea; }
+    .note {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>JavaScript Array Methods – Cheat Sheet</h1>
+
+<h2>🔴 Mutating Methods (change original array)</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>What it does</th>
+    <th>Returns</th>
+  </tr>
+  <tr class="mutating"><td><code>push()</code></td><td>Add to end</td><td>Number (new length)</td></tr>
+  <tr class="mutating"><td><code>pop()</code></td><td>Remove from end</td><td>Removed element</td></tr>
+  <tr class="mutating"><td><code>shift()</code></td><td>Remove from start</td><td>Removed element</td></tr>
+  <tr class="mutating"><td><code>unshift()</code></td><td>Add to start</td><td>Number (new length)</td></tr>
+  <tr class="mutating"><td><code>splice()</code></td><td>Add/remove items</td><td>Array (removed items)</td></tr>
+  <tr class="mutating"><td><code>sort()</code></td><td>Sort array</td><td>Array (same reference)</td></tr>
+  <tr class="mutating"><td><code>reverse()</code></td><td>Reverse array</td><td>Array (same reference)</td></tr>
+  <tr class="mutating"><td><code>fill()</code></td><td>Replace values</td><td>Array</td></tr>
+  <tr class="mutating"><td><code>copyWithin()</code></td><td>Copy part inside array</td><td>Array</td></tr>
+</table>
+
+<h2>🟢 Non-Mutating Methods (safe)</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>What it does</th>
+    <th>Returns</th>
+  </tr>
+  <tr class="non-mutating"><td><code>map()</code></td><td>Transform items</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>filter()</code></td><td>Filter items</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>slice()</code></td><td>Extract portion</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>concat()</code></td><td>Merge arrays</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>flat()</code></td><td>Flatten array</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>flatMap()</code></td><td>Map + flatten</td><td>Array</td></tr>
+</table>
+
+<h2>🔵 Search / Condition Methods</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Returns</th>
+  </tr>
+  <tr><td><code>find()</code></td><td>Element or undefined</td></tr>
+  <tr><td><code>findIndex()</code></td><td>Number or -1</td></tr>
+  <tr><td><code>includes()</code></td><td>Boolean</td></tr>
+  <tr><td><code>some()</code></td><td>Boolean</td></tr>
+  <tr><td><code>every()</code></td><td>Boolean</td></tr>
+</table>
+
+<h2>🟣 Other Important</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Returns</th>
+  </tr>
+  <tr><td><code>forEach()</code></td><td>undefined</td></tr>
+  <tr><td><code>reduce()</code></td><td>Any type</td></tr>
+  <tr><td><code>join()</code></td><td>String</td></tr>
+  <tr><td><code>Array.isArray()</code></td><td>Boolean</td></tr>
+</table>
+
+<p class="note">
+  ⭐ Tip: If it returns an <b>array</b>, you can chain it. If it returns a <b>number / boolean</b>, chaining stops.
+</p>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Methods Cheat Sheet</title>
+  <style>
+    /* Reset and fonts */
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.5;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #2a2a72;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 24px;
+      color: #444;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 4px;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 12px;
+      font-size: 13px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: linear-gradient(to right, #6a8caf, #4c6b8c);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+      background: #f4f7fb;
+    }
+
+    tr:nth-child(odd) {
+      background: #fff;
+    }
+
+    tr:hover {
+      background: #e0f0ff;
+      transition: 0.2s;
+    }
+
+    /* Mutating and non-mutating rows */
+    .mutating td { background: #ffeaea; }
+    .non-mutating td { background: #eaffea; }
+
+    /* Code styling */
+    code {
+      background: #eee;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+    }
+
+    /* Notes and tips */
+    .note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #555;
+      padding: 10px;
+      background: #fff8dc;
+      border-left: 4px solid #f2c94c;
+      border-radius: 6px;
+    }
+
+    /* Responsive */
+    @media print {
+      body { margin: 10px; background: #fff; }
+      h1, h2 { color: #000; text-shadow: none; }
+      table { box-shadow: none; }
+      .note { background: #eee; border-left-color: #aaa; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>JavaScript Array Methods – Cheat Sheet</h1>
+
+<h2>🔴 Mutating Methods (change original array)</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>What it does</th>
+    <th>Returns</th>
+  </tr>
+  <tr class="mutating"><td><code>push()</code></td><td>Add to end</td><td>Number (new length)</td></tr>
+  <tr class="mutating"><td><code>pop()</code></td><td>Remove from end</td><td>Removed element</td></tr>
+  <tr class="mutating"><td><code>shift()</code></td><td>Remove from start</td><td>Removed element</td></tr>
+  <tr class="mutating"><td><code>unshift()</code></td><td>Add to start</td><td>Number (new length)</td></tr>
+  <tr class="mutating"><td><code>splice()</code></td><td>Add/remove items</td><td>Array (removed items)</td></tr>
+  <tr class="mutating"><td><code>sort()</code></td><td>Sort array</td><td>Array (same reference)</td></tr>
+  <tr class="mutating"><td><code>reverse()</code></td><td>Reverse array</td><td>Array (same reference)</td></tr>
+  <tr class="mutating"><td><code>fill()</code></td><td>Replace values</td><td>Array</td></tr>
+  <tr class="mutating"><td><code>copyWithin()</code></td><td>Copy part inside array</td><td>Array</td></tr>
+</table>
+
+<h2>🟢 Non-Mutating Methods (safe)</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>What it does</th>
+    <th>Returns</th>
+  </tr>
+  <tr class="non-mutating"><td><code>map()</code></td><td>Transform items</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>filter()</code></td><td>Filter items</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>slice()</code></td><td>Extract portion</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>concat()</code></td><td>Merge arrays</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>flat()</code></td><td>Flatten array</td><td>Array</td></tr>
+  <tr class="non-mutating"><td><code>flatMap()</code></td><td>Map + flatten</td><td>Array</td></tr>
+</table>
+
+<h2>🔵 Search / Condition Methods</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Returns</th>
+  </tr>
+  <tr><td><code>find()</code></td><td>Element or undefined</td></tr>
+  <tr><td><code>findIndex()</code></td><td>Number or -1</td></tr>
+  <tr><td><code>includes()</code></td><td>Boolean</td></tr>
+  <tr><td><code>some()</code></td><td>Boolean</td></tr>
+  <tr><td><code>every()</code></td><td>Boolean</td></tr>
+</table>
+
+<h2>🟣 Other Important</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Returns</th>
+  </tr>
+  <tr><td><code>forEach()</code></td><td>undefined</td></tr>
+  <tr><td><code>reduc
