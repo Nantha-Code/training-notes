@@ -26,7 +26,7 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,region,population,ca
     .filter(country => country.population > 10_000_000)             
     .toSorted((a, b) => b.population - a.population)               
     .slice(0, 10)                                                  
-    .map((country, i) => `${String(i + 1).padStart(2, '0')}. ${country.name.common} - ${country.population}`) 
+    .map((country, i) => ` ${country.name.common} - ${country.population}`) 
   )
   .then(result => console.log(result))
   .catch(err => console.error("Fetch error:", err));
