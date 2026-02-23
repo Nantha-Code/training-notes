@@ -7,7 +7,7 @@
 # print(year)
 
 # task1.3
-fahrenheit = input("Please provide your fahrenheit")
+fahrenheit = float(input("Please provide your fahrenheit"))
 
-print(float(fahrenheit - 32) * 5 / 9)
-print(f"the {fahrenheit}F is {float}")
+celcius = (fahrenheit - 32) * 5 / 9
+print(f"the {fahrenheit}F is {celcius}")
