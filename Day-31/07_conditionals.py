@@ -41,6 +41,23 @@ else:
 # Please tell me the height of Zoro?: 163
 # Luffy is taller than Zoro by 10cm
 
+
+# print(f"the height is {height}")
+captain_name = input("Please tell me the captain name?")
+vice_captain_name = input(" Please tell me the vice captain name?")
+
+luffy_height = int(input("Please tell me the height of Luffy?"))
+zoro_height = int(input("Please tell me the height of Zoro?"))
+
+if(luffy_height >= zoro_height):
+    print("Luffy is taller than Zoro 10cm")
+else:
+    print("Zoro is taller than Luffy")
+
+
+
+
+
 # Case 2:
 # Please tell me the captain name?: Luffy
 # Please tell me the vice captain name?: Zoro
