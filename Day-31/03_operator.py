@@ -25,3 +25,11 @@
 # Input: 23
 # Output: [==        ] 23%
 
+loader = int(input("tell me the percentage"))
+# area = [=======   ]70%
+area = (input - 10)
+print(area)
+
+
+s = "[PYTHON ROCKS]"
+print (s[0:6:2] )
