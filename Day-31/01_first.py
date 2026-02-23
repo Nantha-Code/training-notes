@@ -22,3 +22,7 @@ print("My age is " + str(age))
 
 # task1.3
 print(f"My age is {age}")
+
+# numeric separator
+followers = 4_000_000
+print(f"my age is {age} and my followers is {followers}")
