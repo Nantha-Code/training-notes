@@ -18,13 +18,8 @@ stock4 = "chocolate"
 
 
 name = input("Please enter your fav 🍧?:")
-if(stock1 == name):
-   print("Yes, we have vanilla in stock")
-elif(stock2 == name):
-   print("Yes, we have green tea in stock")
-elif(stock1 == name):
-   print("Yes, we have lemon in stock")  
-elif(stock1 == name):
-   print("Yes, we have choclate in stock")       
+if(stock1 == name or stock2 == name or stock3 == name or stock4 == name ):
+   print(f"Yes, we have {name} in stock")     
 else:
      print(f"Sorry, we ran out of{name} ")
+
