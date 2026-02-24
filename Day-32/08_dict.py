@@ -36,10 +36,10 @@ pirate = {
 }
 
 
-print(pirate["crew_members"][1])
 
+print(pirate["crew_members"][1])
+print(pirate["age"]+1)
 # Task
 # Increase age by 1
 
 
-print(pirate)
