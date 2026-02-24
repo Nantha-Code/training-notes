@@ -1,7 +1,6 @@
 flowers = ["💐", "🌷", "🌼", "🌷", "🌺"]
 
-for i in range(len,(flowers)):
-    print("flower",1+i,flowers[i])
+   
 
 
 # Task 1.1 - Print all the flower using for loop
@@ -19,6 +18,9 @@ for i in range(len,(flowers)):
 
 # Task 1.2: Double all the numbers
 marks = [80, 90, 100, 60, 85]
+for i in range(len(marks)):
+    marks[i]=(marks[i]*2)
+    print(marks)
 
 # Output
 # print(marks) -> [160, 180, 200, 120, 170]
@@ -26,7 +28,12 @@ marks = [80, 90, 100, 60, 85]
 
 # Task 1.3: Double the power
 powers = [2000, 3000, 4000, 1500]
+double_powers = []
+for pwer in powers:
+    double_powers.append(powers*2)
 
+print(double_powers)
+# print(powers)    
 # Output
 # doubled_powers -> [4000, 6000, 8000, 3000]
 # powers -> [2000, 3000, 4000, 1500]
@@ -36,6 +43,7 @@ powers = [2000, 3000, 4000, 1500]
 # Find longer names (>= 6 letter)
 
 characters = ["Hello kitty", "Goku", "Pikachu", "Luffy", "Yuji Itadori", "Levi"]
+
 
 # ### Expected Output
 # ['Hello kitty', 'Pikachu', 'Yuji Itadori']
