@@ -37,8 +37,10 @@ pirate = {
 
 
 
+pirate["age"]+= 1
 print(pirate["crew_members"][1])
-print(pirate["age"]+1)
+print(pirate["age"])
+print(pirate)
 # Task
 # Increase age by 1
 
