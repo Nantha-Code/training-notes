@@ -46,7 +46,7 @@ else:
 captain_name = input("Please tell me the captain name?")
 vice_captain_name = input(" Please tell me the vice captain name?")
 
-luffy_height = int(input("Please tell me the height of Luffy?"))
+luffy_height = int(input("Please tell me the height of Lu?"))
 zoro_height = int(input("Please tell me the height of Zoro?"))
 
 if(luffy_height >= zoro_height):
