@@ -185,7 +185,7 @@ class Account:
         self.balance = balance
 
     def apply_interest(self):
-        self.balance = self.balance*Account.interest_rate
+        self.balance = self.balance*Account.interest_rate + self.balance
         return f"Success. Applied interest rate of 2.00%. Your balance is: ₹{self.balance:,}"    
         
 
@@ -248,8 +248,10 @@ class Account:
         self.balance = self.balance * Account.interest_rate + self.balance
         return f"Success. Applied interest rate of {Account.interest_rate:.2%}. {self.display_balance()}"
 
-    def update_interest_rate():
-        pass
+    def update_interest_rate(self):
+        self.balance = self.balance * Account.interest_rate + self.balance
+        return f"Success. Applied interest rate of {Account.interest_rate:.4%}. {self.display_balance()}"
+
 
 
 gopi = Account(101, "Gopika Hariharan", 1_00_00_000)
