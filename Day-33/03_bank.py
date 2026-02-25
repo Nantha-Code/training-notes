@@ -68,15 +68,137 @@ class Account:
 
     # Task
     def display_balance(self):
+        return (f"Your balance is :{self.balance:,}")
+   
+    def display_withdraw(self):
         pass
-
 
 nk = Account(101, "Nandha Kumar", 50_000)
 rishi = Account(102, "Rishi", 3_00_000)
 puspha = Account(103, "Pushpendar", 10_00_000)
 
-print(rishi.balance)
-print(rishi)
+# print(rishi.balance)
+# print(rishi)
 
-print(rishi.display_balance())
-# Your balance is: ₹3,00,000.00
+print(rishi.display_balance())  # Your balance is: ₹300,000.00
+print(nk.display_balance())  # Your balance is: ₹50,000.00
+
+
+## Task 1.2
+
+print(rishi.display_balance()) # Your balance is: ₹900,000.00
+# print(puspha.withdraw(1_00_000))  # Success. Your balance is: ₹900,000.00
+# print(puspha.withdraw(10_00_000))  # Insufficient funds. Your balance is: ₹900,000.00
+# print(puspha.withdraw(-100))  # Invalid amount
+
+
+## Task 1.3
+
+
+# print(rishi.deposit(1_00_000))  # Success. Your balance is: ₹400,000.00
+# print(rishi.display_balance())  # Your balance is: ₹400,000.00
+
+
+# instance = object
+# Class variable (PI) -> for all the instance value remains same
+# Instance variable (self.radius) -> for each instance value is different
+
+
+class Circle:
+    # Class variable
+    PI = 3.14
+
+    def __init__(self, radius):
+        # Instance variable
+        self.radius = radius
+        print("Radius", self.radius)
+        print("PI", self.PI, Circle.PI)
+
+    def calculate_area(self):
+        return Circle.PI * self.radius**2
+
+
+c1 = Circle(2)
+c2 = Circle(4)
+
+# print(c1.radius)
+# print(c2.radius)
+
+# # ClassName.ClassVariable
+# print(Circle.PI)
+
+print(c1.calculate_area())
+print(c2.calculate_area())
+
+
+# ## Decorators - HOF
+# - @staticmethod - no access to self ❌
+# - @classmethod
+
+
+# def perimeter(radius):
+#     return 2 * Circle.PI * radius
+
+
+# perimeter(2)
+
+
+class Circle:
+    # Class variable
+    PI = 3.14
+
+    def __init__(self, radius):
+        # Instance variable
+        self.radius = radius
+        print("Radius", self.radius)
+        print("PI", self.PI, Circle.PI)
+
+    def calculate_area(self):
+        return Circle.PI * self.radius**2
+
+    @staticmethod  # Decorators
+    def perimeter(radius):
+        return 2 * Circle.PI * radius
+
+    # Class method - cls -> cls access class variables
+    @classmethod
+    def from_diameter(cls, diameter):
+        # print(cls.PI)  # ✅
+        # print(cls.radius)  # ❌
+        radius = diameter / 2
+        return Circle(radius)
+
+
+c1 = Circle(2)
+c2 = Circle(4)
+
+c3 = Circle.from_diameter(10)  # Circle(5)
+
+print(c3.calculate_area())
+print(Circle.perimeter(2))
+
+
+    
+gopi = Account(101, "Gopika Hariharan", 1_00_00_000)
+vikki = Account(102, "Vignesh M", 10_00_000)
+bala = Account(103, "Bala Kumar", 50_00_000)
+
+
+# Interest rate 2%
+# 100 + 2 = 102
+print(gopi.apply_interest())
+print(vikki.apply_interest())
+print(bala.apply_interest())
+
+# Success. Applied interest rate of 2.00%. Your balance is: ₹10,200,000.00
+# Success. Applied interest rate of 2.00%. Your balance is: ₹1,020,000.00
+# Success. Applied interest rate of 2.00%. Your balance is: ₹5,100,000.00
+
+print(gopi.display_balance())
+print(vikki.display_balance())
+print(bala.display_balance())
+
+
+# Your balance is: ₹10,200,000.00
+# Your balance is: ₹1,020,000.00
+# Your balance is: ₹5,100,000.00
