@@ -89,4 +89,17 @@ where Title
 like  "WALL-_";
 ```
 ![alt text](<Screenshot from 2026-02-25 17-39-27.png>)
+
+
+##Exercise 4 — Tasks
+-List all directors of Pixar movies (alphabetically), without duplicates ✓
+```
+SELECT 
+DISTINCT
+director from
+movies order by director;
+```
+-List the last four Pixar movies released (ordered from most recent to least)
+-List the first five Pixar movies sorted alphabetically
+-List the next five Pixar movies sorted alphabetically
     
