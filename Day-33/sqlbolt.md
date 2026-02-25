@@ -56,3 +56,37 @@
     between 1 and 5;
     ```
     ![alt text](<Screenshot from 2026-02-25 16-48-37.png>)
+
+
+
+##Exercise 3 — Tasks
+-Find all the Toy Story movies ✓
+```
+SELECT * 
+FROM movies
+where title
+like "Toy Story%";
+```
+-Find all the movies directed by John Lasseter
+```
+SELECT * 
+FROM movies
+where director
+like "John Lasseter";
+```
+-Find all the movies (and director) not directed by John Lasseter
+```
+SELECT * 
+FROM movies
+where director
+not like  "John Lasseter";
+```
+-Find all the WALL-* movies
+```
+SELECT * 
+FROM movies
+where Title
+like  "WALL-_";
+```
+![alt text](<Screenshot from 2026-02-25 17-39-27.png>)
+    
