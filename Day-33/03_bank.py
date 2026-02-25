@@ -177,8 +177,18 @@ c3 = Circle.from_diameter(10)  # Circle(5)
 print(c3.calculate_area())
 print(Circle.perimeter(2))
 
+class Account:
+    interest_rate = 0.02
+    def __init__(self,acc_no,name,balance):
+        self.acc_no = acc_no
+        self.name = name
+        self.balance = balance
 
-    
+    def apply_interest(self):
+        self.balance = self.balance*Account.interest_rate
+        return f"Success. Applied interest rate of 2.00%. Your balance is: ₹{self.balance:,}"    
+        
+
 gopi = Account(101, "Gopika Hariharan", 1_00_00_000)
 vikki = Account(102, "Vignesh M", 10_00_000)
 bala = Account(103, "Bala Kumar", 50_00_000)
@@ -194,9 +204,9 @@ print(bala.apply_interest())
 # Success. Applied interest rate of 2.00%. Your balance is: ₹1,020,000.00
 # Success. Applied interest rate of 2.00%. Your balance is: ₹5,100,000.00
 
-print(gopi.display_balance())
-print(vikki.display_balance())
-print(bala.display_balance())
+# print(gopi.display_balance())
+# print(vikki.display_balance())
+# print(bala.display_balance())
 
 
 # Your balance is: ₹10,200,000.00
