@@ -24,3 +24,21 @@ order by rating desc
 ```
 
 ![alt text](<Screenshot from 2026-02-26 16-34-15.png>)
+
+
+
+##Exercise 7 — Tasks
+-Find the list of all buildings that have employees ✓
+```
+SELECT distinct building FROM 
+employees as e
+inner join buildings as b
+where 
+e.building = b.building_name;
+```
+-Find the list of all buildings and their capacity
+```
+SELECT *
+FROM  buildings;
+```
+-List all buildings and the distinct employee roles in each building (including empty buildings)
