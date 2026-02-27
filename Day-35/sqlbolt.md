@@ -67,3 +67,37 @@ GROUP BY building;
 ```
 ![alt text](<Screenshot from 2026-02-27 14-47-36.png>)
 
+##Exercise 11 — Tasks
+-Find the number of Artists in the studio (without a HAVING clause)
+```
+SELECT role, 
+COUNT(*) as Number_of_artists
+FROM employees
+WHERE role = "Artist";
+```
+-Find the number of Employees of each role in the studio
+```
+SELECT role, COUNT(*)
+FROM employees
+GROUP BY role;
+```
+-Find the total number of years employed by all Engineers
+```
+SELECT role, SUM(years_employed)
+FROM employees
+GROUP BY role
+HAVING role = "Engineer";
+```
+
+![alt text](<Screenshot from 2026-02-27 17-11-17.png>)
+
+
+##Exercise 12 — Tasks
+-Find the number of movies each director has directed
+```
+
+```
+-Find the total domestic and international sales that can be attributed to each director
+```
+
+```
